@@ -1,0 +1,10 @@
+{
+  "name": "@softwareventures/sh",
+  "version": "0.0.0",
+  "description": "POSIX-compatible shell",
+  "main": "index.js",
+  "repository": "https://github.com/github:softwareventures/sh",
+  "author": "Daniel Cassidy <mail@danielcassidy.me.uk>",
+  "license": "ISC",
+  "private": false
+}

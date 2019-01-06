@@ -1,0 +1,9 @@
+/.idea
+/tsconfig.json
+/tslint.json
+/yarn.lock
+/.travis.yml
+yarn-error.log
+npm-debug.log
+*.ts
+!*.d.ts
