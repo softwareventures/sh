@@ -30,5 +30,12 @@ function step(state: State): State {
         throw new Error("Step past end of character stream");
     }
 
+    if (state.position === state.text.length) {
+        return {
+            ...state,
+            mode: "end"
+        };
+    }
+
     throw new Error("Not implemented");
 }
