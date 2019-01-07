@@ -22,7 +22,8 @@ export function tokenize(text: string): ReadonlyArray<Token> {
 }
 
 interface State {
-    readonly mode: "token-boundary" | "in-word" | "in-operator" | "end";
+    readonly mode: "token-boundary" | "in-word" | "in-operator"
+        | "in-escape" | "in-single-quote" | "in-double-quote" | "end";
     readonly tokens: ReadonlyArray<Token>;
     readonly text: string;
     readonly position: number;
@@ -49,6 +50,16 @@ function step(state: State): State {
             return tokenChar(state);
         } else {
             return delimit(state);
+        }
+    }
+
+    if (!quoting(state)) {
+        if (char === "\\") {
+            return tokenChar({...state, mode: "in-escape"});
+        } else if (char === "'") {
+            return tokenChar({...state, mode: "in-single-quote"});
+        } else if (char === '"') {
+            return tokenChar({...state, mode: "in-double-quote"});
         }
     }
 
@@ -97,4 +108,8 @@ function tokenChar(state: State): State {
         position: state.position + 1,
         token: state.token + state.text.charAt(state.position)
     };
+}
+
+function quoting(state: State): boolean {
+    return state.mode === "in-escape" || state.mode === "in-single-quote" || state.mode === "in-double-quote";
 }
