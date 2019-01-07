@@ -63,6 +63,12 @@ function step(state: State): State {
         }
     }
 
+    if (!hardQuoting(state)) {
+        if (char === "$" || char === "`") {
+            throw new Error("Not implemented");
+        }
+    }
+
     throw new Error("Not implemented");
 }
 
@@ -112,4 +118,8 @@ function tokenChar(state: State): State {
 
 function quoting(state: State): boolean {
     return state.mode === "in-escape" || state.mode === "in-single-quote" || state.mode === "in-double-quote";
+}
+
+function hardQuoting(state: State): boolean {
+    return state.mode === "in-escape" || state.mode === "in-single-quote";
 }
