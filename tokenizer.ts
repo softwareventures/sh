@@ -44,8 +44,12 @@ function step(state: State): State {
     const char = state.text.charAt(state.position);
     const token = (state.token + char);
 
-    if (state.mode === "in-operator" && partialOperatorMap[token]) {
-        return tokenChar(state);
+    if (state.mode === "in-operator") {
+        if (partialOperatorMap[token]) {
+            return tokenChar(state);
+        } else {
+            return delimit(state);
+        }
     }
 
     throw new Error("Not implemented");
