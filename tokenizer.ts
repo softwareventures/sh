@@ -8,7 +8,8 @@ export function tokenize(text: string): ReadonlyArray<Token> {
         mode: "token-boundary",
         tokens: [],
         text,
-        position: 0
+        position: 0,
+        token: ""
     };
 
     while (state.mode !== "end") {
@@ -19,10 +20,11 @@ export function tokenize(text: string): ReadonlyArray<Token> {
 }
 
 interface State {
-    readonly mode: "token-boundary" | "end";
+    readonly mode: "token-boundary" | "in-word" | "in-operator" | "end";
     readonly tokens: ReadonlyArray<Token>;
     readonly text: string;
     readonly position: number;
+    readonly token: string;
 }
 
 function step(state: State): State {
@@ -32,10 +34,32 @@ function step(state: State): State {
 
     if (state.position === state.text.length) {
         return {
-            ...state,
+            ...delimit(state),
             mode: "end"
         };
     }
 
     throw new Error("Not implemented");
+}
+
+function delimit(state: State): State {
+    const tokenType = state.mode === "in-word"
+        ? "word"
+        : state.mode === "in-operator"
+            ? "operator"
+            : null;
+
+    if (tokenType == null) {
+        return state;
+    } else {
+        return {
+            ...state,
+            mode: "token-boundary",
+            tokens: state.tokens.concat([{
+                type: tokenType,
+                text: state.token
+            }]),
+            token: ""
+        };
+    }
 }
