@@ -69,6 +69,10 @@ function step(state: State): State {
         }
     }
 
+    if (!quoting(state) && partialOperatorMap[char]) {
+        return tokenChar({...delimit(state), mode: "in-operator"});
+    }
+
     throw new Error("Not implemented");
 }
 
