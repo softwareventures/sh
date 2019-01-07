@@ -108,6 +108,11 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
+dictionary-types@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/dictionary-types/-/dictionary-types-1.0.0.tgz#c74738702a2253dce2f2761f5e0a44f203f994fb"
+  integrity sha512-WBoXmEOlpph7MeUNAaHzf704J15wpTgic6xlnak47uuibcmOKEdYBwmVRR4mHtNz+K2MGLvxE2m1LojdqwpTPA==
+
 diff@^3.2.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"

@@ -12,7 +12,8 @@
     "test": "echo No tests yet"
   },
   "dependencies": {
-    "@softwareventures/tsconfig": "^1.0.0"
+    "@softwareventures/tsconfig": "^1.0.0",
+    "dictionary-types": "^1.0.0"
   },
   "devDependencies": {
     "@softwareventures/tslint-rules": "^0.6.2",

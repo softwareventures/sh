@@ -1,3 +1,5 @@
+import {Dictionary} from "dictionary-types";
+
 export interface Token {
     readonly type: "word" | "operator";
     readonly text: string;
@@ -39,6 +41,13 @@ function step(state: State): State {
         };
     }
 
+    const char = state.text.charAt(state.position);
+    const token = (state.token + char);
+
+    if (state.mode === "in-operator" && partialOperatorMap[token]) {
+        return tokenChar(state);
+    }
+
     throw new Error("Not implemented");
 }
 
@@ -62,4 +71,26 @@ function delimit(state: State): State {
             token: ""
         };
     }
+}
+
+const operators = ["<", ">", ">|", ">>", "<<", "<<-", "<&", ">&", "<>", "|", "&&", "||", ";", "&"];
+
+const partialOperatorMap = operators
+    .sort()
+    .reduce((map, operator) => {
+        operator.split("")
+            .reduce((partial, char) => {
+                partial += char;
+                map[partial] = true;
+                return partial;
+            }, "");
+        return map;
+    }, {} as Dictionary<boolean>);
+
+function tokenChar(state: State): State {
+    return {
+        ...state,
+        position: state.position + 1,
+        token: state.token + state.text.charAt(state.position)
+    };
 }
