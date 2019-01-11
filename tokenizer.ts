@@ -63,10 +63,8 @@ function step(state: State): State {
         }
     }
 
-    if (!hardQuoting(state)) {
-        if (char === "$" || char === "`") {
-            throw new Error("Not implemented");
-        }
+    if (!hardQuoting(state) && (char === "$" || char === "`")) {
+        throw new Error("Not implemented");
     }
 
     if (!quoting(state) && partialOperatorMap[char]) {
