@@ -71,6 +71,10 @@ function step(state: State): State {
         if (partialOperatorMap[char]) {
             return tokenChar({...delimit(state), mode: "in-operator"});
         }
+
+        if (char === " " || char === "\t") {
+            return skipChar(delimit(state));
+        }
     }
 
     throw new Error("Not implemented");
@@ -111,6 +115,13 @@ const partialOperatorMap = operators
             }, "");
         return map;
     }, {} as Dictionary<boolean>);
+
+function skipChar(state: State): State {
+    return {
+        ...state,
+        position: state.position + 1
+    };
+}
 
 function tokenChar(state: State): State {
     return {
