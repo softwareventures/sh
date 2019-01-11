@@ -77,6 +77,10 @@ function step(state: State): State {
         }
     }
 
+    if (state.mode === "in-word") {
+        return tokenChar(state);
+    }
+
     throw new Error("Not implemented");
 }
 
