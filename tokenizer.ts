@@ -81,6 +81,10 @@ function step(state: State): State {
         return tokenChar(state);
     }
 
+    if (char === "#") {
+        return discardComment(state);
+    }
+
     throw new Error("Not implemented");
 }
 
@@ -141,4 +145,12 @@ function quoting(state: State): boolean {
 
 function hardQuoting(state: State): boolean {
     return state.mode === "in-escape" || state.mode === "in-single-quote";
+}
+
+function discardComment(state: State): State {
+    let i = state.position;
+    while (i < state.text.length && state.text.charAt(i) !== "\n") {
+        ++i;
+    }
+    return {...state, position: i};
 }
