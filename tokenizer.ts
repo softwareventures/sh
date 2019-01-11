@@ -85,7 +85,7 @@ function step(state: State): State {
         return discardComment(state);
     }
 
-    throw new Error("Not implemented");
+    return tokenChar({...state, mode: "in-word"});
 }
 
 function delimit(state: State): State {
