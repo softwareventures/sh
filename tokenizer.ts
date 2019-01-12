@@ -47,7 +47,7 @@ function step(state: State): State {
 
     if (state.mode === "in-operator") {
         if (partialOperatorMap[token]) {
-            return tokenChar(state);
+            return consumeChar(state);
         } else {
             return delimit(state);
         }
@@ -55,11 +55,11 @@ function step(state: State): State {
 
     if (!quoting(state)) {
         if (char === "\\") {
-            return tokenChar({...state, mode: "in-escape"});
+            return consumeChar({...state, mode: "in-escape"});
         } else if (char === "'") {
-            return tokenChar({...state, mode: "in-single-quote"});
+            return consumeChar({...state, mode: "in-single-quote"});
         } else if (char === '"') {
-            return tokenChar({...state, mode: "in-double-quote"});
+            return consumeChar({...state, mode: "in-double-quote"});
         }
     }
 
@@ -69,23 +69,23 @@ function step(state: State): State {
 
     if (!quoting(state)) {
         if (partialOperatorMap[char]) {
-            return tokenChar({...delimit(state), mode: "in-operator"});
+            return consumeChar({...delimit(state), mode: "in-operator"});
         }
 
         if (char === " " || char === "\t") {
-            return skipChar(delimit(state));
+            return discardChar(delimit(state));
         }
     }
 
     if (state.mode === "in-word") {
-        return tokenChar(state);
+        return consumeChar(state);
     }
 
     if (char === "#") {
         return discardComment(state);
     }
 
-    return tokenChar({...state, mode: "in-word"});
+    return consumeChar({...state, mode: "in-word"});
 }
 
 function delimit(state: State): State {
@@ -124,14 +124,14 @@ const partialOperatorMap = operators
         return map;
     }, {} as Dictionary<boolean>);
 
-function skipChar(state: State): State {
+function discardChar(state: State): State {
     return {
         ...state,
         position: state.position + 1
     };
 }
 
-function tokenChar(state: State): State {
+function consumeChar(state: State): State {
     return {
         ...state,
         position: state.position + 1,
