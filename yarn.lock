@@ -2,12 +2,12 @@
 # yarn lockfile v1
 
 
-"@softwareventures/tsconfig@^1.0.0":
+"@softwareventures/tsconfig@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-1.0.0.tgz#987228780994db57e92332b4f595a81956fe7920"
   integrity sha512-uHOzxmiCwmml0Wk4GMhvafLgBjQCGUxKpiYYSqAo5EqTXew2EHqu8jEMlIvRarqon7pPugReixZaQdvAevqoZQ==
 
-"@softwareventures/tslint-rules@^0.6.2":
+"@softwareventures/tslint-rules@0.6.2":
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/@softwareventures/tslint-rules/-/tslint-rules-0.6.2.tgz#5f3f181f69e34c9f3cd929fee1b50ed8dc478f22"
   integrity sha512-Y9VWt1mHEFLmYVuH14xAZUNqyytZbo/MFKBsN6r7TL3BuLEWEPfA7EtfWvdH4WhUw3A+0GM5PjLbp6fFn2popg==
@@ -108,7 +108,7 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-dictionary-types@^1.0.0:
+dictionary-types@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/dictionary-types/-/dictionary-types-1.0.0.tgz#c74738702a2253dce2f2761f5e0a44f203f994fb"
   integrity sha512-WBoXmEOlpph7MeUNAaHzf704J15wpTgic6xlnak47uuibcmOKEdYBwmVRR4mHtNz+K2MGLvxE2m1LojdqwpTPA==
@@ -285,7 +285,7 @@ tslint-eslint-rules@^5.4.0:
     tslib "1.9.0"
     tsutils "^3.0.0"
 
-tslint@^5.12.0:
+tslint@5.12.0:
   version "5.12.0"
   resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.12.0.tgz#47f2dba291ed3d580752d109866fb640768fca36"
   integrity sha512-CKEcH1MHUBhoV43SA/Jmy1l24HJJgI0eyLbBNSRyFlsQvb9v6Zdq+Nz2vEOH00nC5SUx4SneJ59PZUS/ARcokQ==
@@ -317,7 +317,7 @@ tsutils@^3.0.0:
   dependencies:
     tslib "^1.8.1"
 
-typescript@^3.2.2:
+typescript@3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.2.2.tgz#fe8101c46aa123f8353523ebdcf5730c2ae493e5"
   integrity sha512-VCj5UiSyHBjwfYacmDuc/NOk4QQixbE+Wn7MFJuS0nRuPQbof132Pw4u53dm264O8LPc2MVsc7RJNml5szurkg==
