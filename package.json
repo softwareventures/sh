@@ -16,7 +16,7 @@
     "dictionary-types": "1.0.0"
   },
   "devDependencies": {
-    "@softwareventures/tslint-rules": "0.6.4",
+    "@softwareventures/tslint-rules": "0.6.6",
     "tslint": "5.13.1",
     "typescript": "3.3.3333"
   }
