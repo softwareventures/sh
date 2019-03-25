@@ -17,7 +17,13 @@
   },
   "devDependencies": {
     "@softwareventures/tslint-rules": "0.6.6",
+    "cz-conventional-changelog": "2.1.0",
     "tslint": "5.14.0",
     "typescript": "3.3.4000"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
