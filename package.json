@@ -15,7 +15,7 @@
     "dictionary-types": "1.0.0"
   },
   "devDependencies": {
-    "@softwareventures/tsconfig": "1.0.0",
+    "@softwareventures/tsconfig": "2.0.0",
     "@softwareventures/tslint-rules": "0.6.6",
     "cz-conventional-changelog": "2.1.0",
     "tslint": "5.14.0",
