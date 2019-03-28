@@ -8,8 +8,8 @@
   "license": "ISC",
   "private": false,
   "scripts": {
-    "prepare": "tslint --project . && tsc",
-    "test": "echo No tests yet"
+    "prepare": "tsc",
+    "test": "tslint --project ."
   },
   "dependencies": {
     "dictionary-types": "1.0.0"
