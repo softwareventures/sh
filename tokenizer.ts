@@ -63,8 +63,12 @@ function step(state: State): State {
         }
     }
 
-    if (!hardQuoting(state) && (char === "$" || char === "`")) {
-        throw new Error("Not implemented");
+    if (!hardQuoting(state)) {
+        if (char === "$") {
+            return consumeDollarExpansion(consumeChar(state));
+        } else if (char === "`") {
+            throw new Error("Not implemented");
+        }
     }
 
     if (!quoting(state)) {
@@ -153,4 +157,19 @@ function discardComment(state: State): State {
         ++i;
     }
     return {...state, position: i};
+}
+
+function consumeDollarExpansion(state: State): State {
+    const char = state.text.charAt(state.position);
+
+    if (char === "{" || char === "(") {
+        throw new Error("Not implemented");
+    }
+
+    return {
+        ...state,
+        mode: quoting(state)
+            ? state.mode
+            : "in-word"
+    };
 }
