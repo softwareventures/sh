@@ -18,7 +18,7 @@
     "@softwareventures/tsconfig": "2.0.0",
     "@softwareventures/tslint-rules": "0.7.1",
     "cz-conventional-changelog": "3.0.2",
-    "tslint": "5.18.0",
+    "tslint": "5.19.0",
     "typescript": "3.5.3"
   },
   "config": {
