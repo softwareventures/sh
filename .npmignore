@@ -1,9 +1,8 @@
 /.idea
+/yarn.lock
 /tsconfig.json
 /tslint.json
-/yarn.lock
 /.github
-yarn-error.log
-npm-debug.log
+/renovate.json
 *.ts
 !*.d.ts
