@@ -417,10 +417,10 @@ detect-indent@6.0.0:
   resolved "https://registry.yarnpkg.com/detect-indent/-/detect-indent-6.0.0.tgz#0abd0f549f69fc6659a254fe96786186b6f528fd"
   integrity sha512-oSyFlqaTHCItVRGK5RmrmjB+CmaMOW7IaNA/kdxqhoa6d17j/5ce9O9eWXmV/KEdRwqpQA+Vqe8a8Bsybu4YnA==
 
-dictionary-types@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/dictionary-types/-/dictionary-types-1.0.1.tgz#290286529b26e1215997dd2e98baf63f4711687b"
-  integrity sha512-JGpbd8PS4NP6L3JMA+zctLmUQLMC2btt++D8C/DxrxVnxfiXIlcPiHE6ParZBCiUasvm70CAzs6zKKN0evbwHg==
+dictionary-types@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/dictionary-types/-/dictionary-types-1.1.0.tgz#584a3dcba987360a3c43e0236914a9e10fa1b0d9"
+  integrity sha512-qRmoAVD7uBv6K+TkiuyRR2iCvNPeBvaGFDVhpVgkil1a06Q/X892BFPKywuhAEwdmrAI/d8LtodUqRgkaQ4U2g==
 
 diff@^4.0.1:
   version "4.0.2"
