@@ -19,7 +19,7 @@
     "@softwareventures/tslint-rules": "0.7.1",
     "cz-conventional-changelog": "3.1.0",
     "tslint": "5.20.1",
-    "typescript": "3.8.2"
+    "typescript": "3.8.3"
   },
   "config": {
     "commitizen": {
