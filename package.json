@@ -12,7 +12,7 @@
     "test": "tslint --project ."
   },
   "dependencies": {
-    "dictionary-types": "1.1.0"
+    "dictionary-types": "1.2.0"
   },
   "devDependencies": {
     "@softwareventures/tsconfig": "2.2.0",
