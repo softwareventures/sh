@@ -17,7 +17,7 @@
   "devDependencies": {
     "@softwareventures/tsconfig": "2.2.0",
     "@softwareventures/tslint-rules": "0.9.1",
-    "cz-conventional-changelog": "3.2.1",
+    "cz-conventional-changelog": "3.3.0",
     "tslint": "6.1.3",
     "typescript": "4.0.2"
   },
