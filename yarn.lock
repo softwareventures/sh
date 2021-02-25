@@ -56,10 +56,10 @@
   resolved "https://registry.yarnpkg.com/@commitlint/types/-/types-11.0.0.tgz#719cf05fcc1abb6533610a2e0f5dd1e61eac14fe"
   integrity sha512-VoNqai1vR5anRF5Tuh/+SWDFk7xi7oMwHrHrbm1BprYXjB2RJsWLhUrStMssDxEl5lW/z3EUdg8RvH/IUBccSQ==
 
-"@softwareventures/tsconfig@4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-4.1.0.tgz#31dbe9b733bc5ca45aa8ee45b032d114695f46a7"
-  integrity sha512-S27RcoTBaqvhmXmAwH/OVSAuAm7fMSpK62gLwP3Cta8RpSLdNUYsmhNEI9gkx3JrR5Dh1k6lVdfR37vMKXiiYw==
+"@softwareventures/tsconfig@5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-5.0.1.tgz#9be2d6dcdc3de65233014c527754700f46882bbb"
+  integrity sha512-B1LBY+S7dDiPmH29MTi3Z3hBdSEetHf87cmUueQCSlrbpFpROZvDZrnujM844wXKNue5XYIe5oO8jp/eWCfY9w==
 
 "@softwareventures/tslint-rules@0.9.1":
   version "0.9.1"
