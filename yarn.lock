@@ -58,10 +58,10 @@
   dependencies:
     chalk "^4.0.0"
 
-"@softwareventures/tsconfig@4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-4.1.0.tgz#31dbe9b733bc5ca45aa8ee45b032d114695f46a7"
-  integrity sha512-S27RcoTBaqvhmXmAwH/OVSAuAm7fMSpK62gLwP3Cta8RpSLdNUYsmhNEI9gkx3JrR5Dh1k6lVdfR37vMKXiiYw==
+"@softwareventures/tsconfig@5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-5.0.1.tgz#9be2d6dcdc3de65233014c527754700f46882bbb"
+  integrity sha512-B1LBY+S7dDiPmH29MTi3Z3hBdSEetHf87cmUueQCSlrbpFpROZvDZrnujM844wXKNue5XYIe5oO8jp/eWCfY9w==
 
 "@softwareventures/tslint-rules@0.9.1":
   version "0.9.1"
