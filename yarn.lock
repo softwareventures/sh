@@ -301,10 +301,10 @@ detect-indent@6.0.0:
   resolved "https://registry.yarnpkg.com/detect-indent/-/detect-indent-6.0.0.tgz#0abd0f549f69fc6659a254fe96786186b6f528fd"
   integrity sha512-oSyFlqaTHCItVRGK5RmrmjB+CmaMOW7IaNA/kdxqhoa6d17j/5ce9O9eWXmV/KEdRwqpQA+Vqe8a8Bsybu4YnA==
 
-dictionary-types@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/dictionary-types/-/dictionary-types-1.2.0.tgz#187d89b63b044a65a5e4aed0f2345271f086200d"
-  integrity sha512-zeP98fC8l+xwHMCw+q9spJCnDrm4ou3Vyk9yNihjJeJD9Mi+zuFxtyO6kAmX5b5d49mavZ6VYvVFF3Ap6hCzBw==
+dictionary-types@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/dictionary-types/-/dictionary-types-1.2.1.tgz#7a0d5d9002b5684f58a62630a3acfff83a5c9791"
+  integrity sha512-ph9evNK1Jxh6GigbskMOzjF3UGfk2mqcR7VLhfHmorR53UNCjUm4f+Xu/oa44mEXbWeyDHdnHKSRBM48rvAPUQ==
 
 diff@^4.0.1:
   version "4.0.2"

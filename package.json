@@ -12,7 +12,7 @@
     "test": "tslint --project ."
   },
   "dependencies": {
-    "dictionary-types": "1.2.0"
+    "dictionary-types": "1.2.1"
   },
   "devDependencies": {
     "@softwareventures/semantic-release-config": "1.1.2",
