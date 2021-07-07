@@ -1,16 +1,16 @@
 {
+  "private": false,
   "name": "@softwareventures/sh",
   "version": "0.0.0",
   "description": "POSIX-compatible shell",
-  "main": "index.js",
-  "repository": "https://github.com/github:softwareventures/sh",
   "author": "Daniel Cassidy <mail@danielcassidy.me.uk>",
+  "repository": "https://github.com/github:softwareventures/sh",
   "license": "ISC",
-  "private": false,
   "scripts": {
     "prepare": "tsc",
     "test": "tslint --project ."
   },
+  "main": "index.js",
   "dependencies": {
     "dictionary-types": "1.2.1"
   },
