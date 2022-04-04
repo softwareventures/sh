@@ -8,7 +8,7 @@
   "license": "ISC",
   "scripts": {
     "fix": "tsc --noEmit",
-    "lint": "tsc --noEmit",
+    "lint": "tsc --noEmit && tslint --project .",
     "prepare": "tsc",
     "test": "tslint --project ."
   },
