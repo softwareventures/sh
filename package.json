@@ -14,6 +14,7 @@
   "bugs": "https://github.com/softwareventures/sh/issues",
   "repository": "github:softwareventures/sh",
   "license": "ISC",
+  "type": "module",
   "scripts": {
     "fix": "tsc --noEmit && tslint --fix --project .",
     "lint": "tsc --noEmit && tslint --project .",
