@@ -7,7 +7,7 @@
   "repository": "https://github.com/github:softwareventures/sh",
   "license": "ISC",
   "scripts": {
-    "fix": "tsc --noEmit",
+    "fix": "tsc --noEmit && tslint --fix --project .",
     "lint": "tsc --noEmit && tslint --project .",
     "prepare": "tsc",
     "test": "tslint --project ."
