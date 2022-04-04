@@ -19,7 +19,7 @@
     "fix": "tsc --noEmit && eslint . --fix && prettier --write .",
     "lint": "tsc --noEmit && eslint . && prettier --check .",
     "prepare": "tsc",
-    "test": "echo No tests yet"
+    "test": "ava"
   },
   "main": "index.js",
   "engines": {
@@ -33,9 +33,11 @@
     "@softwareventures/prettier-config": "3.0.0",
     "@softwareventures/semantic-release-config": "2.0.0",
     "@softwareventures/tsconfig": "6.0.0",
+    "ava": "4.1.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.12.0",
     "prettier": "2.6.2",
+    "ts-node": "10.7.0",
     "typescript": "4.6.3"
   },
   "eslintConfig": {
@@ -47,6 +49,14 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "ava": {
+    "extensions": {
+      "ts": "module"
+    },
+    "nodeArguments": [
+      "--loader=ts-node/esm"
+    ]
   },
   "release": {
     "extends": "@softwareventures/semantic-release-config"
