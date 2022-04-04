@@ -22,8 +22,14 @@ export function tokenize(text: string): ReadonlyArray<Token> {
 }
 
 interface State {
-    readonly mode: "token-boundary" | "in-word" | "in-operator"
-        | "in-escape" | "in-single-quote" | "in-double-quote" | "end";
+    readonly mode:
+        | "token-boundary"
+        | "in-word"
+        | "in-operator"
+        | "in-escape"
+        | "in-single-quote"
+        | "in-double-quote"
+        | "end";
     readonly tokens: ReadonlyArray<Token>;
     readonly text: string;
     readonly position: number;
@@ -43,7 +49,7 @@ function step(state: State): State {
     }
 
     const char = state.text.charAt(state.position);
-    const token = (state.token + char);
+    const token = state.token + char;
 
     if (state.mode === "in-operator") {
         if (partialOperatorMap[token]) {
@@ -93,11 +99,8 @@ function step(state: State): State {
 }
 
 function delimit(state: State): State {
-    const tokenType = state.mode === "in-word"
-        ? "word"
-        : state.mode === "in-operator"
-            ? "operator"
-            : null;
+    const tokenType =
+        state.mode === "in-word" ? "word" : state.mode === "in-operator" ? "operator" : null;
 
     if (tokenType == null) {
         return state;
@@ -105,10 +108,12 @@ function delimit(state: State): State {
         return {
             ...state,
             mode: "token-boundary",
-            tokens: state.tokens.concat([{
-                type: tokenType,
-                text: state.token
-            }]),
+            tokens: state.tokens.concat([
+                {
+                    type: tokenType,
+                    text: state.token
+                }
+            ]),
             token: ""
         };
     }
@@ -116,17 +121,14 @@ function delimit(state: State): State {
 
 const operators = ["<", ">", ">|", ">>", "<<", "<<-", "<&", ">&", "<>", "|", "&&", "||", ";", "&"];
 
-const partialOperatorMap = operators
-    .sort()
-    .reduce((map, operator) => {
-        operator.split("")
-            .reduce((partial, char) => {
-                partial += char;
-                map[partial] = true;
-                return partial;
-            }, "");
-        return map;
-    }, {} as Dictionary<boolean>);
+const partialOperatorMap = operators.sort().reduce((map, operator) => {
+    operator.split("").reduce((partial, char) => {
+        partial += char;
+        map[partial] = true;
+        return partial;
+    }, "");
+    return map;
+}, {} as Dictionary<boolean>);
 
 function discardChar(state: State): State {
     return {
@@ -144,7 +146,11 @@ function consumeChar(state: State): State {
 }
 
 function quoting(state: State): boolean {
-    return state.mode === "in-escape" || state.mode === "in-single-quote" || state.mode === "in-double-quote";
+    return (
+        state.mode === "in-escape" ||
+        state.mode === "in-single-quote" ||
+        state.mode === "in-double-quote"
+    );
 }
 
 function hardQuoting(state: State): boolean {
@@ -168,8 +174,6 @@ function consumeDollarExpansion(state: State): State {
 
     return {
         ...state,
-        mode: quoting(state)
-            ? state.mode
-            : "in-word"
+        mode: quoting(state) ? state.mode : "in-word"
     };
 }
