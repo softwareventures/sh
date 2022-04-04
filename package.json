@@ -3,7 +3,15 @@
   "name": "@softwareventures/sh",
   "version": "0.0.0",
   "description": "POSIX-compatible shell",
+  "keywords": [
+    "sh",
+    "shell",
+    "POSIX",
+    "Bourne"
+  ],
   "author": "Daniel Cassidy <mail@danielcassidy.me.uk>",
+  "homepage": "https://github.com/softwareventures/sh",
+  "bugs": "https://github.com/softwareventures/sh/issues",
   "repository": "github:softwareventures/sh",
   "license": "ISC",
   "scripts": {
