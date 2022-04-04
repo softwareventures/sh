@@ -1,11 +1,11 @@
-import {Dictionary} from "dictionary-types";
+import type {Dictionary} from "dictionary-types";
 
 export interface Token {
     readonly type: "word" | "operator";
     readonly text: string;
 }
 
-export function tokenize(text: string): ReadonlyArray<Token> {
+export function tokenize(text: string): readonly Token[] {
     let state: State = {
         mode: "token-boundary",
         tokens: [],
@@ -30,7 +30,7 @@ interface State {
         | "in-single-quote"
         | "in-double-quote"
         | "end";
-    readonly tokens: ReadonlyArray<Token>;
+    readonly tokens: readonly Token[];
     readonly text: string;
     readonly position: number;
     readonly token: string;
@@ -52,7 +52,7 @@ function step(state: State): State {
     const token = state.token + char;
 
     if (state.mode === "in-operator") {
-        if (partialOperatorMap[token]) {
+        if (partialOperatorMap[token] ?? false) {
             return consumeChar(state);
         } else {
             return delimit(state);
@@ -78,7 +78,7 @@ function step(state: State): State {
     }
 
     if (!quoting(state)) {
-        if (partialOperatorMap[char]) {
+        if (partialOperatorMap[char] ?? false) {
             return consumeChar({...delimit(state), mode: "in-operator"});
         }
 
@@ -121,14 +121,14 @@ function delimit(state: State): State {
 
 const operators = ["<", ">", ">|", ">>", "<<", "<<-", "<&", ">&", "<>", "|", "&&", "||", ";", "&"];
 
-const partialOperatorMap = operators.sort().reduce((map, operator) => {
-    operator.split("").reduce((partial, char) => {
-        partial += char;
-        map[partial] = true;
-        return partial;
+const partialOperatorMap = operators.sort().reduce<Dictionary<boolean>>((map, operator) => {
+    void operator.split("").reduce((partial, char) => {
+        const p = partial + char;
+        map[p] = true;
+        return p;
     }, "");
     return map;
-}, {} as Dictionary<boolean>);
+}, {});
 
 function discardChar(state: State): State {
     return {
