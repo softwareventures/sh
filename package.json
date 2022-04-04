@@ -23,7 +23,7 @@
   },
   "main": "index.js",
   "engines": {
-    "node": "^12 || ^14 || >=16"
+    "node": "^14 || >=16"
   },
   "dependencies": {
     "dictionary-types": "2.0.1"
