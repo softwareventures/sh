@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "description": "POSIX-compatible shell",
   "author": "Daniel Cassidy <mail@danielcassidy.me.uk>",
-  "repository": "https://github.com/github:softwareventures/sh",
+  "repository": "github:softwareventures/sh",
   "license": "ISC",
   "scripts": {
     "fix": "tsc --noEmit && tslint --fix --project .",
